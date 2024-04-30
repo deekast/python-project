@@ -1,0 +1,40 @@
+CLI project 4/30
+
+Start project with mkdir project-name and then inside that folder touch Pipfile 
+Depending on what package you want you do a pipenv install package_name 
+
+initialize git repo 
+
+git init 
+git add 
+git commit -m"init"
+
+add a gitignore
+>>> touch .gitignore
+add .vnenv to gitignore 
+so git ignores this 
+
+create a folder "lib"
+add an app.py to the folder 
+
+
+create bin folder 
+create run.py
+
+from lib.app import App
+
+app = App()
+
+app.run()
+
+this tells the app what file to run i think 
+
+do this outside the binfolder actually 
+
+
+
+
+
+
+
+
