@@ -27,15 +27,12 @@ class App:
         print("Start a new game?")
 
         while self.user_input == "":
-            self.user_input = input (">>> ")
-            if self.user_input == "Yes":
-                self.start_game()
+            self.user_input = input(">>> ").lower()
             if self.user_input == "yes":
-                self.start_game()
-            if self.user_input == "YES":
                 self.start_game()
             else:
                 print("You have no other option here. Enter 'Yes' and embrace your destiny")
+
 
     def start_game(self):
         pass
