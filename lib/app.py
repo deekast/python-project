@@ -27,12 +27,43 @@ class App:
         print("Start a new game?")
 
         while self.user_input == "":
-            self.user_input = input(">>> ").lower()
+            self.user_input = input (">>> ")
+            if self.user_input == "Yes":
+                self.start_game()
             if self.user_input == "yes":
+                self.start_game()
+            if self.user_input == "YES":
                 self.start_game()
             else:
                 print("You have no other option here. Enter 'Yes' and embrace your destiny")
 
-
     def start_game(self):
-        pass
+        print('''
+              The year is 2024. The world is falling apart, the job market is a mess, and you are living by yourself 
+              in a one-bedroom hovel in the magical land of Eboracum Novum with four roommates, all of whom are monstrous
+              trolls (literal monstrous trolls -- no looks-shaming here!)-- and your rent is still more than you can afford! 
+              ''')
+        print(''' 
+              Hoping to create a better life for yourself -- and perhaps find a home free of trolls -- you decide to embark on a 
+              new career wielding magic -- in other words, you've signed up for a coding bootcamp! You've scrounged together the 
+              neccesary doubloons (adding a fifth troll roommate to make up for the cost) and you're all ready to go --
+              all they need is your name.
+              ''')
+        self.user_input = input(">>> ")
+        name = self.user_input
+
+        print (f"Welcome to coding bootcamp, {name}! As it turns out, your old rival from childhood is also enrolled at this bootcamp.
+               Err... What's their name again?" )
+        
+        self.user_input = input(">>> ")
+        rival = self.user_input
+
+        print(f"That's right, it's {rival}! Seems likely you'll see them again at some point. In any event, come on in to bootcamp and get started learning!")
+        self.entrance()
+
+    def entrance():
+        print ('''
+               As you enter your coding bootcamp, it becomes clear that something isn't right. A dark aura sits in the 
+               ''')
+
+        
