@@ -1,3 +1,5 @@
+import random 
+
 class App:
 
     def __init__(self):
@@ -52,8 +54,8 @@ class App:
         self.user_input = input(">>> ")
         name = self.user_input
 
-        print (f"Welcome to coding bootcamp, {name}! As it turns out, your old rival from childhood is also enrolled at this bootcamp.
-               Err... What's their name again?" )
+        print (f"""Welcome to coding bootcamp, {name}! As it turns out, your old rival from childhood is also enrolled at this bootcamp.
+               Err... What's their name again?""" )
         
         self.user_input = input(">>> ")
         rival = self.user_input
@@ -61,9 +63,23 @@ class App:
         print(f"That's right, it's {rival}! Seems likely you'll see them again at some point. In any event, come on in to bootcamp and get started learning!")
         self.entrance()
 
-    def entrance():
+    def entrance(self):
         print ('''
                As you enter your coding bootcamp, it becomes clear that something isn't right. A dark aura sits in the 
+               center of the room, casting a shadow over everything. Suddenly, a figure steps out from the shadows,
+               revealing himself to be your instructor, Chett. He looks at you with a stern yet encouraging gaze and says,
+               "Before we begin, let's ensure you're ready. What does the print() function do in Python?"
+               A) It defines a class
+               B) It displays output on the screen
+               C) It imports modules
+               D) It creates a loop
                ''')
-
+        if self.user_input.lower() == "b":
+            print("Correct The print() function in Python is used to display output on the screen.  Now, let's move on to the next question. #--->>> second question goes here<-----")
+           
         
+
+app = App()
+app.run()
+    
+    

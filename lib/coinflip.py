@@ -1,5 +1,15 @@
 import random
 
+class Coin: 
+    def flip_coin(self):
+        self.coin_flip_result = random.randint(0, 1)
+        if self.coin_flip_result == 0:
+            print("Wrong, flip a coin")
+            self.entrance()
+        else:
+            print("Wrong again! Oh well, maybe next time. Starting over...")
+            self.start_game()
+
 print('Coin flip game')
 start = input('Press enter to flip the coin')
 count = 0
