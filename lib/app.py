@@ -53,6 +53,7 @@ class App:
               all they need is your name.
               ''')
         self.user_input = input(">>> ")
+
         self.name = self.user_input
 
         print (f'''Welcome to coding bootcamp, {self.name}! As it turns out, your old rival from childhood is also enrolled at this bootcamp.
@@ -65,6 +66,7 @@ class App:
         self.entrance()
 
     def entrance(self):
+
         print ('''
                As you enter your coding bootcamp, it becomes clear that something isn't right. A dark aura seems to to coat the room like a thick layer of fog.
                Most of the lights are dimmed, but you see a flicker of light coming from one room. You walk over and investigate.
@@ -76,12 +78,13 @@ class App:
               You walk into the room, which has a bloody sign reading "TURING" overhead. The room sits empty except for a single behoodied
               man sitting at  table. Behind his fashionable spectacles, there is nothing behind his glazed-over eyes. He speaks in a ghastly monotone
               ''')
+
         print(f'''Hello, {self.name} I am Chett, an instructor here at Schola FlatFerrum. To move on to the next room -- in our school that is,
               for some reason, set like a railroad apartment -- you must answer a question about Python. If you fail, you'll get a chance to redeem yourself
-              with a game of chance''')
-        print('''
-              Here is your first question:
-              True or false: Raccoons are very cute.
+
+        print(f'''Hello, {start_game.name} I am Chett, an instructor here at Schola FlatFerrum. To move on to the next room -- in our school that is,
+              for some reason, set like a railroad apartment, you must answer a question about Python. If you fail, you'll get a chance to redeem yourself
+
               1. True
               2. False
               ''')
@@ -113,6 +116,11 @@ class App:
         print("You have died. Will you go to programmer heaven or programmer hell? These are the questions you should ask yourself")
        
     
+
+              A. True
+              B. False
+              ''')
+
 
 
      
