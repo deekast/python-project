@@ -1,5 +1,3 @@
-import random 
-
 class App:
 
     def __init__(self):
@@ -47,15 +45,15 @@ class App:
               ''')
         print(''' 
               Hoping to create a better life for yourself -- and perhaps find a home free of trolls -- you decide to embark on a 
-              new career wielding magic -- in other words, you've signed up for a coding bootcamp! You've scrounged together the 
+              new career wielding magic -- in other words, you've signed up for Schola FlatFerrum, a coding bootcamp! You've scrounged together the 
               neccesary doubloons (adding a fifth troll roommate to make up for the cost) and you're all ready to go --
               all they need is your name.
               ''')
         self.user_input = input(">>> ")
         name = self.user_input
 
-        print (f"""Welcome to coding bootcamp, {name}! As it turns out, your old rival from childhood is also enrolled at this bootcamp.
-               Err... What's their name again?""" )
+        print (f'''Welcome to coding bootcamp, {name}! As it turns out, your old rival from childhood is also enrolled at this bootcamp.
+               Err... What's their name again?''' )
         
         self.user_input = input(">>> ")
         rival = self.user_input
@@ -63,23 +61,28 @@ class App:
         print(f"That's right, it's {rival}! Seems likely you'll see them again at some point. In any event, come on in to bootcamp and get started learning!")
         self.entrance()
 
-    def entrance(self):
+    def entrance():
         print ('''
-               As you enter your coding bootcamp, it becomes clear that something isn't right. A dark aura sits in the 
-               center of the room, casting a shadow over everything. Suddenly, a figure steps out from the shadows,
-               revealing himself to be your instructor, Chett. He looks at you with a stern yet encouraging gaze and says,
-               "Before we begin, let's ensure you're ready. What does the print() function do in Python?"
-               A) It defines a class
-               B) It displays output on the screen
-               C) It imports modules
-               D) It creates a loop
+               As you enter your coding bootcamp, it becomes clear that something isn't right. A dark aura seems to to coat the room like a thick layer of fog.
+               Most of the lights are dimmed, but you see a flicker of light coming from one room. You walk over and investigate.
                ''')
-        if self.user_input.lower() == "b":
-            print("Correct The print() function in Python is used to display output on the screen.  Now, let's move on to the next question. #--->>> second question goes here<-----")
-           
-        
+        self.first_encounter()
 
-app = App()
-app.run()
-    
-    
+    def first_encounter(self):
+        print('''
+              You walk into the room, which has a bloody sign reading "TURING" overhead. The room sits empty except for a single behoodied
+              man sitting at  table. Behind his fashionable spectacles, there is nothing behind his glazed-over eyes. He speaks in a ghastly monotone
+              ''')
+        print(f'''Hello, {start_game.name} I am Chett, an instructor here at Schola FlatFerrum. To move on to the next room -- in our school that is,
+              for some reason, set like a railroad apartment, you must answer a question about Python. If you fail, you'll get a chance to redeem yourself
+              with a game of chance''')
+        print('''
+              Here is your first question:
+              True or false: Raccoons are very cute.
+              A. True
+              B. False
+              ''')
+
+
+
+     
