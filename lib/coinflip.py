@@ -1,29 +1,22 @@
 import random
 
-class Coin: 
+class CoinFlipGame:
+    def __init__(self):
+        self.count = 0
+        self.heads = 0
+        self.tails = 0
+
     def flip_coin(self):
-        self.coin_flip_result = random.randint(0, 1)
-        if self.coin_flip_result == 0:
-            print("Wrong, flip a coin")
-            self.entrance()
+        self.count += 1
+        coin_flip = random.randint(0, 1)
+        if coin_flip == 0:
+            print('Heads')
+            self.heads += 1
+            return True
         else:
-            print("Wrong again! Oh well, maybe next time. Starting over...")
-            self.start_game()
+            print('Tails')
+            self.tails += 1
+            return False
 
-print('Coin flip game')
-start = input('Press enter to flip the coin')
-count = 0
-heads = 0
-tails = 0
-
-while count < 100:
-    coin_flip = random.randint(0, 1)
-    count += 1
-    if coin_flip == 0:
-        print('Heads')
-        heads += 1
-    else:
-        print('Tails')
-        tails += 1
-
-print(f'Number of heads: {heads}, Number of tails: {tails}')
+    def win(self):
+        return self.heads > self.tails
