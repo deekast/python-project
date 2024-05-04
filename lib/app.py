@@ -26,19 +26,21 @@ class App:
                 self.about()
 
     def about(self):
+        self.about_input=''
         print("Magical Code Quest is a text-based game created by Alex, Ben and Danny. It is a CLI game created entirely in Python. We hope you enjoy it.")
         print('''Start a new game?
               1. Yes
               2. No, I'm scared!
               ''')
 
-        while self.user_input not in ["1", "2"]:
-            self.user_input = input(">>> ")
-            print("That is not a valid option. Are you sure you want to be a programmer?")
-            if self.user_input == "1":
+        while self.about_input not in ["1", "2"]:
+            self.about_input = input(">>> ")
+            if self.about_input not in ["1","2"]: 
+                print("That is not a valid option. Are you sure you want to be a programmer?")
+            if self.about_input == "1":
                 print("Excellent choice. Let the adventure begin...")
                 self.start_game()
-            if self.user_input == "2":
+            if self.about_input == "2":
                 print("Too bad. The hour of destiny is upon us.")
                 self.start_game()
             
@@ -139,7 +141,62 @@ class App:
         print("You have died. Will you go to programmer heaven or programmer hell? These are the questions you should ask yourself")
 
     def second_encounter(self):
-        print("testing!")
+        self.question3_input = ''
+        print("You go through the door into the next room. Another behoodied man sits in the middle of the room, furiously typing on a laptop.")
+        print(f"""Welcome to the Collins Dungeon, {self.name}. I am Sakib, another instructor here at Schola FlatFerrum. As you can tell, things aren't
+              exactly going great here. As much as I'd love to just let you go through, you'll need to answer a question about python first. If you don't get it right,
+              you'll have a chanve to redeem yourself with a game of chance.
+              """)
+        print("""Here is your question:
+              4. What is a Decorator?
+                 1) A function that takes another function as an argument, modifies it, and returns the modified function. 
+                 2) A type of function that can only be applied to functions that take exactly two arguments. 
+                 3) A way to add new functionality to an existing function without changing its source code. 
+                 4) A type of function that can only be applied to functions that do not take any arguments.
+              """)
+        self.question3_input = input(">>> ")
+        if self.question3_input not in ["1","2","3","4"]:
+                    print("That is not a valid option. Are you sure you want to be a programmer?")
+        if self.question3_input in ["1", "2", "4"]:
+                    print("""Incorrect! You should spend more time studying python. Before you do that, though, you'll need to win against me in a 
+                          dice roll""")
+                    self.coin_flip()
+        if self.question3_input == "3":
+                        print("""That is correct! You may move on to the next room.""")
+                        self.third_encounter()
+
+    def coin_flip(self):
+        self.cf_entry=''
+        print(f"""
+              Sorry, {self.name}, but that is not correct. You REALLY need to brush up on your python. For now, though, we're going to 
+              flip a coin to see if you get to move on or, us die.
+              """)
+        print("Call it in the air:")
+        print("Enter 1 for heads or 2 for tails")
+        self.cf_entry = input(">>> ")
+        if self.cf_entry not in ["1", "2"]:
+             print("That is not a valid option. Are you sure you want to be a programmer?")
+        if self.cf_entry == "1":
+            player_call = "Heads"
+        if self.cf_entry == "2":
+            player_call = "Tails"
+        coin_flip = random.randint(0,1)
+        if coin_flip == 0:
+            coin_land = "Heads"
+        if coin_flip == 1:
+            coin_land = "Tails"
+            if coin_land == player_call:
+                print(f"{player_call} it is! You win, and can move on to the next room")
+                self.third_encounter()
+            if coin_land != player_call:
+                 print(f"Sorry, it's {coin_land}! You lose! And, unfortunately, that means you die")
+                 self.death()
+        
+        
+
+        
+
+
        
     
 
