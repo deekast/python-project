@@ -57,13 +57,13 @@ class App:
               neccesary doubloons (adding a fifth troll roommate to make up for the cost) and you're all ready to go --
               all they need is your name.
               """)
-        self.user_input = input(">>> ")
+        self.user_input = input(">>> Insert Name: ")
         self.name = self.user_input
 
         print (f"""Welcome to coding bootcamp, {self.name}! As it turns out, your old rival from childhood is also enrolled at this bootcamp.
                Err... What's their name again?""" )
         
-        self.user_input = input(">>> ")
+        self.user_input = input(">>> Rival Name:  ")
         self.rival = self.user_input
 
         print(f"That's right, it's {self.rival}! Seems likely you'll see them again at some point. In any event, come on in to bootcamp and get started learning!")
@@ -94,7 +94,7 @@ class App:
               2. False
               """)
         while self.question1_input not in ["1", "2"]:
-            self.question1_input = input(">>> ")
+            self.question1_input = input(">>> Choose Wisely:  ")
             if self.question1_input not in ["1", "2"]:
                 print("That is not a valid option. Are you sure you want to be a programmer?")
             if self.question1_input == "1":
@@ -106,7 +106,7 @@ class App:
                       3) It imports modules
                       4) It creates a loop
                       """)
-                self.question2_input = input(">>> ")
+                self.question2_input = input(">>> Choose Wisely: ")
                 if self.question2_input not in ["1","2","3","4"]:
                     print("That is not a valid option. Are you sure you want to be a programmer?")
                 if self.question2_input in ["1", "3", "4"]:
