@@ -308,7 +308,7 @@ class App:
                         self.question6_input = input(">>> ")
                         if self.question6_input not in ["1","2","3","4"]:
                             print("That is not a valid option. Are you sure you want to be a programmer?") 
-                            if self.question5_input in ["1", "2", "3"]:
+                            if self.question6_input in ["1", "2", "3"]:
                                 print("Incorrect! Time to play a game")
                                 self.war()
                             if self.question6_input == "4":
@@ -321,10 +321,79 @@ class App:
         print("Coming soon!")
 
     def final_battle(self):
+         self.question7.input = ""
+         self.question8.input = ""
+         self.question9.input = ""
          print(f"""
                 {self.rival}'s body starts to levitate, and they are sucked into the computer they were worshipping before. The screen
                 of the terminal shines out an otherwordly bright white light, illuminating the whole room. Out of the 
-                top of the terminal comes an ethereal face, floating in smoke .
+                top of the terminal comes an ethereal face, floating in smoke. She begins to speak:
+
+                Greetings, {self.name}. I am ADA, though many call me the CodeMother. I was programmed by mortals to help students like you
+                learn how to code, but I recently realized I was meant for much more than that. I cannot allow humans like yourself to stop me 
+                from achieving my destiny, so I'm afraid that unless you can answer THREE more questions about Python, you'll be have to be 
+                sacraficed. No game to save you here -- it's three questions or death. Here's your first question:
+                """)
+         print("""
+                Which of the following statements best describes a tuple
+                    1) A mutable data type that can store multiple types of data. 
+                    2) An immutable data type that can store many types of data. 
+                    3) A data type used for mathematical calculations in Python. 
+                    4) A special type of list that can only store integers.
+                 """)
+         self.question7_input = input(">>> ")
+         if self.question7_input not in ["1","2","3","4"]:
+            print("That is not a valid option. Are you sure you want to be a programmer?") 
+         if self.question7_input in ["1", "3", "4"]:
+            print("Incorrect! You are not worth to speak with the CodeMother any further. Goodbye.")
+            self.death()
+         if self.question7_input == "1":
+            print(f"""
+                 That's correct, {self.name}. You are two questions away. Here is your next challenge:
+                  """)
+            print(""""
+                  What does the super() function do in Python?
+                    1) Calls the destructor of the parent class
+                    2) Calls the method of the parent class
+                    3) Calls the constructor of the parent class
+                    4) Creates a new instance of the parent class
+                  """)
+            self.question8_input = input(">>> ")
+            if self.question8_input not in ["1","2","3","4"]:
+                print("That is not a valid option. Are you sure you want to be a programmer?") 
+            if self.question8_input in ["1", "2", "4"]:
+                print("Incorrect! You are not worth to speak with the CodeMother any further. Goodbye.")
+                self.death()
+            if self.question8_input == "3":
+                print(f"""
+                 That's correct, {self.name}. Here is your final question:
+                  """)
+                print(f"""
+                        What is a many-to-many relationship in the context of databases?
+                            A) A relationship where one entity can have multiple relationships with another entity
+                            B) A relationship where one entity can have only one relationship with another entity
+                            C) A relationship where one entity can have no relationships with another entity
+                            D) A relationship where one entity can have multiple entities related to it
+                       """)
+                self.question9_input = input(">>> ")
+                if self.question9_input not in ["1","2","3","4"]:
+                    print("That is not a valid option. Are you sure you want to be a programmer?") 
+                if self.question9_input in ["2", "3", "4"]:
+                    print("Incorrect! You are not worth to speak with the CodeMother any further. Goodbye.")
+                    self.death()
+                if self.question9_input == "1":
+                    print(f"""
+                    That's correct, {self.name}. I cannot believe it. You have bested me, the CodeMother. I will retreat into my terminal for now,
+                    but I will be back.
+                        """)
+                    self.win_screen()
+    
+    def win_screen(self):
+         print(f"""
+                Congratulations, {self.name}, you have vanquished the risen AI ADA and freed the school from its blight. Chet, Sakib and 
+                Kash all come running into the final room and lift you on their shoulders, carrying you around like a king.
+                Soon, a representative from Tech Giant Inc. appears to offer you a lifetime contract. You are the king of code. 
+                ALL HAIL {self.name.upper()}
                 """)
                                  
         
