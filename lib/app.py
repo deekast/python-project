@@ -256,8 +256,8 @@ class App:
         if self.replay_input not in choices:
             print("That is not a valid option. Are you sure you want to be a programmer?")
         elif self.replay_input == computer_selection:
-             print(f"We both picked {computer_selection}That's a tie! Looks like we have to play again")
-             rps_replay()
+             print(f"We both picked {computer_selection}. That's a tie! Looks like we have to play again")
+             self.rps_replay()
         elif (self.replay_input == 'rock' and computer_selection == 'scissors') or \
          (self.replay_input == 'scissors' and computer_selection == 'paper') or \
          (self.replay_input == 'paper' and computer_selection == 'rock'):
@@ -268,8 +268,65 @@ class App:
             self.death()
     
     def fourth_encounter(self):
-         print("not yet!")
+         self.question5_input = ''
+         self.question6_input = ''
+         print(f""""
+               You walk into the final room of the school, where -- shock of all shocks -- you see your rival, {self.rival}!
+               They don't appear to be under the same spell as the instructors, but they are kneeling in front of a computer terminal,
+               seemingly deep in prayer. When they notice that you've entered, they turn around to face you.
+               """)
          
+         print(f"""
+                Well, hello {self.name}. I'm glad to see you. I obviously had to leave some challenge for you upon the way, but I knew
+                you'd end up here. I'm sorry that it has to come to this, but the CodeMother demands a sacrafice. And it seems like it has to be you.
+                Tradition dictates, though, that you'll be given a chance to save yourself. To defeat me, you'll have to answer TWO
+                Python questions. If you get them both right, CodeMother may speak to you. If you don't, you'll get a chance to play me in WAR.
+                If you lose that, though? Call yourself Bill Paxton, because it's game over, man. Here is your first question:
+                """)
+         print("""
+            What does ORM stand for in the context of databases?
+            1) Object Relational Mapping
+            2) Object Resource Management
+            3) Object Request Model
+            4) Object Response Model
+               """)
+         self.question5_input = input(">>> ")
+         if self.question5_input not in ["1","2","3","4"]:
+                    print("That is not a valid option. Are you sure you want to be a programmer?")
+         if self.question5_input in ["2", "3", "4"]:
+                    print("Incorrect! Time to play a game")
+                    self.war()
+         if self.question5_input == "1":
+                        print("""That is correct! Time for another question""")
+                        print("""
+                        Which statement is true about inheritance in Python?             
+                        1) A parent class can inherit properties and methods from its child class
+                        2) A class cannot inherit from more than one class
+                        3) Inheritance is not supported in Python
+                        4) A child class can inherit properties and methods from its parent class
+                              """)  
+                        self.question6_input = input(">>> ")
+                        if self.question6_input not in ["1","2","3","4"]:
+                            print("That is not a valid option. Are you sure you want to be a programmer?") 
+                            if self.question5_input in ["1", "2", "3"]:
+                                print("Incorrect! Time to play a game")
+                                self.war()
+                            if self.question6_input == "4":
+                                print(f"""
+                                      That's correct, {self.name}. You've proven yourself worthy to speak to the CodeMother. Good luck.
+                                       """)
+                                self.final_battle()
+    
+    def war(self):
+        print("Coming soon!")
+
+    def final_battle(self):
+         print(f"""
+                {self.rival}'s body starts to levitate, and they are sucked into the computer they were worshipping before. The screen
+                of the terminal shines out an otherwordly bright white light, illuminating the whole room. Out of the 
+                top of the terminal comes an ethereal face, floating in smoke .
+                """)
+                                 
         
 
         
