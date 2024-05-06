@@ -180,6 +180,7 @@ class App:
             player_call = "Heads"
         if self.cf_entry == "2":
             player_call = "Tails"
+        print(f"You called {player_call}! Time to flip.")
         coin_flip = random.randint(0,1)
         if coin_flip == 0:
             coin_land = "Heads"
@@ -191,7 +192,84 @@ class App:
             if coin_land != player_call:
                  print(f"Sorry, it's {coin_land}! You lose! And, unfortunately, that means you die")
                  self.death()
-        
+    
+    def third_encounter(self):
+        self.question4_input = ''
+        print("""You go through to the next room. Things keep getting stranger and stranger. This room is full of students
+               furiously coding away, but they all seem to be under some sort of spell. Their instructor, also glassy-eyed
+               and moving ethereally, rises and speaks.
+               """)
+        print(f"""
+                Hello, {self.name}. My name is Kash. I am the final instructor at Schola FlatFerrum. If you can get past me, you'll
+                be able to move forward and see why things seem to be so strange here. First, though, you'll need to answer the following question:
+                """)
+        print("""
+               How do you define a class method in Python?
+               1) @classmethod def method_name(self):
+               2) def method_name(cls):
+               3) method_name = classmethod(method_name)
+               4) @staticmethod def method_name():
+               """)
+        self.question4_input = input(">>> ")
+        if self.question4_input not in ["1","2","3","4"]:
+                    print("That is not a valid option. Are you sure you want to be a programmer?")
+        if self.question4_input in ["1", "3", "4"]:
+                    print("""Incorrect! You should spend more time studying python. Before you do that, though, you'll need to win against me in a 
+                          game of rock, paper, scissors""")
+                    self.rps()
+        if self.question4_input == "2":
+                        print("""That is correct! You may move on to the next room.""")
+                        self.fourth_encounter()
+
+    def rps(self):
+        self.rps_input=""
+        choices = ['rock', 'paper', 'scissors']
+        computer_selection = random.choice(choices)
+        print(f"""
+               Ok, so we're going to play a game of rock, paper, scissors. Unlike with Chet's dice game,
+               I won't be giving you a win for a tie. Here we go... ROCK, PAPER, SCISSORS... 
+               """)
+        self.rps_input=input('Rock, paper or scissors?').lower()
+        if self.rps_input not in choices:
+            print("That is not a valid option. Are you sure you want to be a programmer?")
+        elif self.rps_input == computer_selection:
+             print("That's a tie! Looks like we have to play again")
+             self.rps_replay()
+        elif (self.rps_input == 'rock' and computer_selection == 'scissors') or \
+         (self.rps_input == 'scissors' and computer_selection == 'paper') or \
+         (self.rps_input== 'paper' and computer_selection == 'rock'):
+            print(f"I picked {computer_selection} and you picked {self.rps_input}. You win, {self.name}! You should still study more python, but you can move ahead for now")
+            self.fourth_encounter()
+        else:
+             print(f"I picked {computer_selection} and you picked {self.rps_input}. That means I win! Which of course means you die. See ya in hell, {self.name}!")
+             self.death()
+    
+    def rps_replay(self):
+        self.replay_input=""
+        choices = ['rock', 'paper', 'scissors']
+        computer_selection = random.choice(choices)
+        print(f"""
+               Ok, so we're going to play a game of rock, paper, scissors. Unlike with Chet's dice game,
+               I won't be giving you a win for a tie. Here we go... ROCK, PAPER, SCISSORS... 
+               """)
+        self.replay_input=input('Rock, paper or scissors?').lower()
+        if self.replay_input not in choices:
+            print("That is not a valid option. Are you sure you want to be a programmer?")
+        elif self.replay_input == computer_selection:
+             print(f"We both picked {computer_selection}That's a tie! Looks like we have to play again")
+             rps_replay()
+        elif (self.replay_input == 'rock' and computer_selection == 'scissors') or \
+         (self.replay_input == 'scissors' and computer_selection == 'paper') or \
+         (self.replay_input == 'paper' and computer_selection == 'rock'):
+            print(f"I picked {computer_selection} and you picked {self.replay_input}. You win, {self.name}! You should still study more python, but you can move ahead for now")
+            self.fourth_encounter()
+        else:
+            print(f"I picked {computer_selection} and you picked {self.replay_input}. That means I win! Which of course means you die. See ya in hell, {self.name}!")
+            self.death()
+    
+    def fourth_encounter(self):
+         print("not yet!")
+         
         
 
         
