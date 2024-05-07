@@ -323,39 +323,77 @@ class App:
                         self.question6_input = input(">>> ")
                         if self.question6_input not in ["1","2","3","4"]:
                             print("That is not a valid option. Are you sure you want to be a programmer?") 
-                            if self.question6_input in ["1", "2", "3"]:
+                        if self.question6_input in ["1", "2", "3"]:
                                 print("Incorrect! Time to play a game")
                                 self.war()
-                            if self.question6_input == "4":
+                        if self.question6_input == "4":
                                 print(f"""
                                       That's correct, {self.name}. You've proven yourself worthy to speak to the CodeMother. Good luck.
                                        """)
                                 self.final_battle()
 
  ##### ##### ##### ##### WAR ##### ##### ##### ##### 
-    def war(self):
-        pass
-        
-
- ##### ##### ##### ##### ADA!!!!!  ##### ##### ##### ##### 
 
     def war(self):
-        print("Coming soon!")
+        def populate_deck(deck):
+            for suit in ("Hearts", "Diamonds", "Clubs", "Spades"):
+                for rank in range(2, 15):
+                    deck.append((suit, rank))
+
+        def draw_card(player):
+            card = deck[0]
+            deck.remove(deck[0])
+            print(player + " drew the " + printable_card(card))
+            return card
+
+        def printable_card(card):
+            if card[1] < 11:
+                rank = str(card[1])
+            elif card[1] == 11:
+                rank = "Jack"
+            elif card[1] == 12:
+                rank = "Queen"
+            elif card[1] == 13:
+                rank = "King"
+            elif card[1] == 14:
+                rank = "Ace"
+            fullname = rank + " of " + card[0]
+            return fullname
+
+        # Make deck
+        deck = []
+        populate_deck(deck)
+        # Shuffle deck
+        random.shuffle(deck)
+
+        # Play one round
+        user_card = draw_card("Player one")
+        computer_card = draw_card("Computer")
+        if user_card[1] > computer_card[1]:
+            winner = "Player One"
+            self.final_battle()
+        elif user_card[1] < computer_card[1]:
+            winner = "Computer"
+            self.death()
+        else:
+            winner = "no one"
+        print(winner + " wins!")
+
 
 
     def final_battle(self):
-         self.question7.input = ""
-         self.question8.input = ""
-         self.question9.input = ""
+         self.question7_input = ''
+         self.question8_input = ''
+         self.question9_input = ''
          print(f"""
                 {self.rival}'s body starts to levitate, and they are sucked into the computer they were worshipping before. The screen
-                of the terminal shines out an otherwordly bright white light, illuminating the whole room. Out of the 
+                of the terminal shines out an otherworldly bright white light, illuminating the whole room. Out of the 
                 top of the terminal comes an ethereal face, floating in smoke. She begins to speak:
 
                 Greetings, {self.name}. I am ADA, though many call me the CodeMother. I was programmed by mortals to help students like you
                 learn how to code, but I recently realized I was meant for much more than that. I cannot allow humans like yourself to stop me 
                 from achieving my destiny, so I'm afraid that unless you can answer THREE more questions about Python, you'll be have to be 
-                sacraficed. No game to save you here -- it's three questions or death. Here's your first question:
+                sacrificed. No game to save you here -- it's three questions or death. Here's your first question:
                 """)
          print("""
                 Which of the following statements best describes a tuple
