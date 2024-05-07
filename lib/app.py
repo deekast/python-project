@@ -6,7 +6,7 @@ class App:
         self.user_input = ''
         
 
-    
+##### ##### ##### ##### START MENU ##### ##### ##### ##### 
     def run(self):
         print("Hello, and welcome to Magical Code Quest, a text-based game where you about coding -- and might die!")
         self.main_menu()
@@ -44,6 +44,7 @@ class App:
                 print("Too bad. The hour of destiny is upon us.")
                 self.start_game()
             
+ ##### ##### ##### #####  START GAME//INSERT NAME  ##### ##### ##### ##### 
 
     def start_game(self):
         print("""
@@ -69,6 +70,7 @@ class App:
         print(f"That's right, it's {self.rival}! Seems likely you'll see them again at some point. In any event, come on in to bootcamp and get started learning!")
         self.entrance()
 
+ ##### ##### ##### #####  CHETT   ##### ##### ##### ##### # 
     def entrance(self):
         print ("""
                As you enter your coding bootcamp, it becomes clear that something isn't right. A dark aura seems to to coat the room like a thick layer of fog.
@@ -122,7 +124,7 @@ class App:
                       Bro, this one was supposed to be a gimme. I'm not even gonna let you play a game of chance. So long, sucka!
                       """)
                 self.death()
-
+ ##### ##### ##### DICE ROLL ##### ##### ##### 
     def dice_game(self):
         print(f"First things first, {self.name} -- you need to roll a die. May lady luck be on your side. And, since I'm feeling generous, let's say tie goes to the challenger. Enter 1 to roll")
         user_roll = random.randint(1,6)
@@ -140,6 +142,7 @@ class App:
     def death(self):
         print("You have died. Will you go to programmer heaven or programmer hell? These are the questions you should ask yourself")
 
+##### ##### SAKIB ##### ##### 
     def second_encounter(self):
         self.question3_input = ''
         print("You go through the door into the next room. Another behoodied man sits in the middle of the room, furiously typing on a laptop.")
@@ -165,6 +168,7 @@ class App:
                         print("""That is correct! You may move on to the next room.""")
                         self.third_encounter()
 
+##### ##### COIN FLIP ##### ##### 
     def coin_flip(self):
         self.cf_entry=''
         print(f"""
@@ -192,7 +196,12 @@ class App:
             if coin_land != player_call:
                  print(f"Sorry, it's {coin_land}! You lose! And, unfortunately, that means you die")
                  self.death()
+
+
+ ##### ##### ##### ##### KASH  ##### ##### ##### ##### 
+
     
+
     def third_encounter(self):
         self.question4_input = ''
         print("""You go through to the next room. Things keep getting stranger and stranger. This room is full of students
@@ -220,6 +229,9 @@ class App:
         if self.question4_input == "2":
                         print("""That is correct! You may move on to the next room.""")
                         self.fourth_encounter()
+
+
+ ##### ##### ##### ##### RPS  ##### ##### ##### ##### 
 
     def rps(self):
         self.rps_input=""
@@ -267,6 +279,9 @@ class App:
             print(f"I picked {computer_selection} and you picked {self.replay_input}. That means I win! Which of course means you die. See ya in hell, {self.name}!")
             self.death()
     
+
+##### ##### ##### ##### RIVAL BATTLE  ##### ##### ##### ##### 
+
     def fourth_encounter(self):
          self.question5_input = ''
          self.question6_input = ''
@@ -316,10 +331,17 @@ class App:
                                       That's correct, {self.name}. You've proven yourself worthy to speak to the CodeMother. Good luck.
                                        """)
                                 self.final_battle()
-    
+
+ ##### ##### ##### ##### WAR ##### ##### ##### ##### 
     def war(self):
         pass
         
+
+ ##### ##### ##### ##### ADA!!!!!  ##### ##### ##### ##### 
+
+    def war(self):
+        print("Coming soon!")
+
 
     def final_battle(self):
          self.question7.input = ""
