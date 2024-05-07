@@ -197,7 +197,11 @@ class App:
                  print(f"Sorry, it's {coin_land}! You lose! And, unfortunately, that means you die")
                  self.death()
 
+
  ##### ##### ##### ##### KASH  ##### ##### ##### ##### 
+
+    
+
     def third_encounter(self):
         self.question4_input = ''
         print("""You go through to the next room. Things keep getting stranger and stranger. This room is full of students
@@ -226,7 +230,9 @@ class App:
                         print("""That is correct! You may move on to the next room.""")
                         self.fourth_encounter()
 
+
  ##### ##### ##### ##### RPS  ##### ##### ##### ##### 
+
     def rps(self):
         self.rps_input=""
         choices = ['rock', 'paper', 'scissors']
@@ -273,7 +279,9 @@ class App:
             print(f"I picked {computer_selection} and you picked {self.replay_input}. That means I win! Which of course means you die. See ya in hell, {self.name}!")
             self.death()
     
+
 ##### ##### ##### ##### RIVAL BATTLE  ##### ##### ##### ##### 
+
     def fourth_encounter(self):
          self.question5_input = ''
          self.question6_input = ''
@@ -323,11 +331,17 @@ class App:
                                       That's correct, {self.name}. You've proven yourself worthy to speak to the CodeMother. Good luck.
                                        """)
                                 self.final_battle()
+
  ##### ##### ##### ##### WAR ##### ##### ##### ##### 
     def war(self):
         print("Coming soon!")
 
  ##### ##### ##### ##### ADA!!!!!  ##### ##### ##### ##### 
+
+    def war(self):
+        print("Coming soon!")
+
+
     def final_battle(self):
          self.question7.input = ""
          self.question8.input = ""
