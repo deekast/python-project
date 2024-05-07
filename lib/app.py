@@ -318,7 +318,8 @@ class App:
                                 self.final_battle()
     
     def war(self):
-        print("Coming soon!")
+        pass
+        
 
     def final_battle(self):
          self.question7.input = ""
