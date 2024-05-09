@@ -8,7 +8,7 @@ class App:
 
 ##### ##### ##### ##### START MENU ##### ##### ##### ##### 
     def run(self):
-        print("Hello, and welcome to Magical Code Quest, a text-based game where you about coding -- and might die!")
+        print("Hello, and welcome to Magical Code Quest, a text-based game where you learn about coding -- and might die!")
         self.main_menu()
 
     def main_menu(self):
