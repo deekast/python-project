@@ -472,21 +472,7 @@ class App:
                 """)
                                  
 
- ####### ANSWER KEY #########
-    '''
-    >>> 1. Start 
-    >>> name: 
-    >>> rival: 
-    >>> q1. raccoons = (1)
-    >>> q2. print() = (2) // dice roll ~ 
-    >>> q3. decorator  = (3) // tails 
-    >>> q4. define class = (2) // RPS 
-    >>> q5. ORM = (1) // WAR 
-    >>> q6. inheritance = (4) // WAR 
-    >>> q6. tuple = (1) // DIE DX 
-    >>> q8. super() = (3) // DIE DX 
-    >>> q9. many-to-many = (1) // DIE DX 
-    '''
+
 
 
 
