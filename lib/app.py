@@ -249,13 +249,14 @@ class App:
                I won't be giving you a win for a tie. Here we go... ROCK, PAPER, SCISSORS... 
                """)
         self.rps_input=input('Rock, paper or scissors?').lower()
-        if self.rps_input not in choices:
+        if self.rps_input not in choices and self.rps_input !='shoot':
             print("That is not a valid option. Are you sure you want to be a programmer?")
         elif self.rps_input == computer_selection:
              print("That's a tie! Looks like we have to play again")
              self.rps_replay()
         elif (self.rps_input == 'rock' and computer_selection == 'scissors') or \
          (self.rps_input == 'scissors' and computer_selection == 'paper') or \
+         (self.rps_input == 'shoot') or \
          (self.rps_input== 'paper' and computer_selection == 'rock'):
             print(f"I picked {computer_selection} and you picked {self.rps_input}. You win, {self.name}! You should still study more python, but you can move ahead for now")
             self.fourth_encounter()
@@ -272,13 +273,14 @@ class App:
                I won't be giving you a win for a tie. Here we go... ROCK, PAPER, SCISSORS... 
                """)
         self.replay_input=input('Rock, paper or scissors?').lower()
-        if self.replay_input not in choices:
+        if self.replay_input not in (choices or self.replay_input != 'shoot'):
             print("That is not a valid option. Are you sure you want to be a programmer?")
         elif self.replay_input == computer_selection:
              print(f"We both picked {computer_selection}. That's a tie! Looks like we have to play again")
              self.rps_replay()
         elif (self.replay_input == 'rock' and computer_selection == 'scissors') or \
          (self.replay_input == 'scissors' and computer_selection == 'paper') or \
+         (self.replay_input == 'shoot') or \
          (self.replay_input == 'paper' and computer_selection == 'rock'):
             print(f"I picked {computer_selection} and you picked {self.replay_input}. You win, {self.name}! You should still study more python, but you can move ahead for now")
             self.fourth_encounter()
@@ -385,6 +387,9 @@ class App:
             self.death()
         else:
             winner = "no one"
+            print('its a time!, need to play again')
+            self.war()
+    
         print(winner + " wins!")
 
 
