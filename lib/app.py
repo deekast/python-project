@@ -202,7 +202,7 @@ class App:
             if coin_land == player_call:
                 print(f"{player_call} it is! You win, and can move on to the next room")
                 self.third_encounter()
-            if coin_land != player_call:
+            else:
                  print(f"Sorry, it's {coin_land}! You lose! And, unfortunately, that means you die")
                  self.death()
 
