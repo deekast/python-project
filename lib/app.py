@@ -31,7 +31,7 @@ class App:
         print('''Start a new game?
               1. Yes
               2. No, I'm scared!
-              ''')
+              ''') 
 
         while self.about_input not in ["1", "2"]:
             self.about_input = input(">>> ")
@@ -61,20 +61,23 @@ class App:
         self.user_input = input(">>> Insert Name: ")
         self.name = self.user_input
 
-        print (f"""Welcome to coding bootcamp, {self.name}! As it turns out, your old rival from childhood is also enrolled at this bootcamp.
+        print (f"""
+               Welcome to our coding bootcamp, {self.name}! As it turns out, your old rival from childhood is also enrolled at this bootcamp.
                Err... What's their name again?""" )
         
         self.user_input = input(">>> Rival Name:  ")
         self.rival = self.user_input
 
-        print(f"That's right, it's {self.rival}! Seems likely you'll see them again at some point. In any event, come on in to bootcamp and get started learning!")
+        print(f"""
+              That's right, it's {self.rival}! Seems likely you'll see them again at some point. In any event, come on in to the bootcamp and get started learning!
+              """)
         self.entrance()
 
  ##### ##### ##### #####  CHETT   ##### ##### ##### ##### # 
     def entrance(self):
         print ("""
-               As you enter your coding bootcamp, it becomes clear that something isn't right. A dark aura seems to to coat the room like a thick layer of fog.
-               Most of the lights are dimmed, but you see a flicker of light coming from one room. You walk over and investigate.
+               As you enter your coding bootcamp, it becomes clear that something isn't right. A dark aura seems to coat the room like a thick layer of fog.
+               Most of the lights are dimmed, but you see a flicker of light coming from one room. You walk over to investigate.
                """)
         self.first_encounter()
 
@@ -84,30 +87,31 @@ class App:
 
         print("""
               You walk into the room, which has a bloody sign reading "TURING" overhead. The room sits empty except for a single behoodied
-              man sitting at  table. Behind his fashionable spectacles, there is nothing behind his glazed-over eyes. He speaks in a ghastly monotone
+              man sitting at a table. Behind his fashionable spectacles, there is nothing behind his glazed-over eyes. He speaks in a ghastly monotone voice:
               """)
-        print(f"""Hello, {self.name} I am Chett, an instructor here at Schola FlatFerrum. To move on to the next room -- in our school that is,
+        print(f'''
+              "Hello, {self.name} I am Chett, an instructor here at Schola FlatFerrum. To move on to the next room -- in our school that is,
               for some reason, set like a railroad apartment -- you must answer a question about Python. If you fail, you'll get a chance to redeem yourself
-              with a game of chance""")
-        print("""
+              with a game of chance.''')
+        print('''
               Here is your first question:
-              True or false: Raccoons are very cute.
-              1. True
-              2. False
-              """)
+              True or False: Raccoons are very cute".
+              1) True
+              2) False
+              ''')
         while self.question1_input not in ["1", "2"]:
             self.question1_input = input(">>> Choose Wisely:  ")
             if self.question1_input not in ["1", "2"]:
                 print("That is not a valid option. Are you sure you want to be a programmer?")
             if self.question1_input == "1":
-                print("""
-                      That is correct! However, that was a pretty easy question, so I'm not going to count it. Here is your real first question:
-                      What does the print() function do in Python?
+                print('''
+                      "That is correct! However, that was a pretty easy question, so I'm not going to count it. Here is your real first question:
+                      What does the print() function do in Python?"
                       1) It defines a class
                       2) It displays output on the screen 
                       3) It imports modules
                       4) It creates a loop
-                      """)
+                      ''')
                 self.question2_input = input(">>> Choose Wisely: ")
                 if self.question2_input not in ["1","2","3","4"]:
                     print("That is not a valid option. Are you sure you want to be a programmer?")
@@ -116,7 +120,9 @@ class App:
                           dice roll""")
                     self.dice_game()
                 if self.question2_input == "2":
-                        print("""That is correct! You may move on to the next room.""")
+                        print('''
+                              "That is correct! You may move on to the next room."
+                              ''')
                         self.second_encounter()
                 
             if self.question1_input == "2":
@@ -126,18 +132,16 @@ class App:
                 self.death()
  ##### ##### ##### DICE ROLL ##### ##### ##### 
     def dice_game(self):
-        print(f"First things first, {self.name} -- you need to roll a die. May lady luck be on your side. And, since I'm feeling generous, let's say tie goes to the challenger. Enter 1 to roll")
+        print(f'"First things first, {self.name} -- you need to roll a die. May lady luck be on your side. And, since I\'m feeling generous, let\'s say tie goes to the challenger. Enter 1 to roll"')
         user_roll = random.randint(1,6)
-        print(f"You rolled a {user_roll}, {self.name}. Now I'll roll")
+        print(f'"You rolled a {user_roll}, {self.name}. Now I\'ll roll"')
         chet_roll = random.randint(1,6)
         if user_roll >= chet_roll:
-            print(f"You rolled a {user_roll} and I rolled a {chet_roll}. I guess you win. Good luck in the next room!")
+            print(f'"You rolled a {user_roll} and I rolled a {chet_roll}. I guess you win. Good luck in the next room!"')
             self.second_encounter()
         if chet_roll > user_roll:
-            print(f"I rolled a {chet_roll} and you rolled a {user_roll}. Tough luck, {self.name}. Time to die!")
+            print(f'"I rolled a {chet_roll} and you rolled a {user_roll}. Tough luck, {self.name}. Time to die!"')
             self.death()
-        
-    
 
     def death(self):
         print("You have died. Will you go to programmer heaven or programmer hell? These are the questions you should ask yourself")
@@ -145,19 +149,24 @@ class App:
 ##### ##### SAKIB ##### ##### 
     def second_encounter(self):
         self.question3_input = ''
-        print("You go through the door into the next room. Another behoodied man sits in the middle of the room, furiously typing on a laptop.")
-        print(f"""Welcome to the Collins Dungeon, {self.name}. I am Sakib, another instructor here at Schola FlatFerrum. As you can tell, things aren't
-              exactly going great here. As much as I'd love to just let you go through, you'll need to answer a question about python first. If you don't get it right,
-              you'll have a chanve to redeem yourself with a game of chance.
+        print("""
+              \n
+              You go through the door into the next room. Another behoodied man sits in the middle of the room, furiously typing on a laptop.
               """)
-        print("""Here is your question:
-              4. What is a Decorator?
+        print(f'''
+              "Welcome to the Collins Dungeon, {self.name}. I am Sakib, another instructor here at Schola FlatFerrum. As you can tell, things aren't
+              exactly going great here. As much as I'd love to just let you go through, you'll need to answer another question about python first. If you don't get it right,
+              you'll have a chance to redeem yourself with a game of chance.
+              ''')
+        print('''
+              Here is your question:
+              What is a Decorator?"
                  1) A function that takes another function as an argument, modifies it, and returns the modified function. 
                  2) A type of function that can only be applied to functions that take exactly two arguments. 
                  3) A way to add new functionality to an existing function without changing its source code. 
                  4) A type of function that can only be applied to functions that do not take any arguments.
-              """)
-        self.question3_input = input(">>> ")
+              ''')
+        self.question3_input = input(">>> Choose Wisely:")
         if self.question3_input not in ["1","2","3","4"]:
                     print("That is not a valid option. Are you sure you want to be a programmer?")
         if self.question3_input in ["1", "2", "4"]:
@@ -165,7 +174,8 @@ class App:
                           dice roll""")
                     self.coin_flip()
         if self.question3_input == "3":
-                        print("""That is correct! You may move on to the next room.""")
+                        print('''
+                              "That is correct! You may move on to the next room."''')
                         self.third_encounter()
 
 ##### ##### COIN FLIP ##### ##### 
@@ -177,14 +187,13 @@ class App:
               """)
         print("Call it in the air:")
         print("Enter 1 for heads or 2 for tails")
-        self.cf_entry = input(">>> ")
+        self.cf_entry = input(">>> Choose Wisely:")
         if self.cf_entry not in ["1", "2"]:
              print("That is not a valid option. Are you sure you want to be a programmer?")
         if self.cf_entry == "1":
             player_call = "Heads"
         if self.cf_entry == "2":
             player_call = "Tails"
-        print(f"You called {player_call}! Time to flip.")
         coin_flip = random.randint(0,1)
         if coin_flip == 0:
             coin_land = "Heads"
@@ -200,26 +209,24 @@ class App:
 
  ##### ##### ##### ##### KASH  ##### ##### ##### ##### 
 
-    
-
     def third_encounter(self):
         self.question4_input = ''
         print("""You go through to the next room. Things keep getting stranger and stranger. This room is full of students
                furiously coding away, but they all seem to be under some sort of spell. Their instructor, also glassy-eyed
                and moving ethereally, rises and speaks.
                """)
-        print(f"""
-                Hello, {self.name}. My name is Kash. I am the final instructor at Schola FlatFerrum. If you can get past me, you'll
+        print(f'''
+                "Hello, {self.name}. My name is Kash. I am the final instructor at Schola FlatFerrum. If you can get past me, you'll
                 be able to move forward and see why things seem to be so strange here. First, though, you'll need to answer the following question:
-                """)
-        print("""
-               How do you define a class method in Python?
+                ''')
+        print('''
+               How do you define a class method in Python?"
                1) @classmethod def method_name(self):
                2) def method_name(cls):
                3) method_name = classmethod(method_name)
                4) @staticmethod def method_name():
-               """)
-        self.question4_input = input(">>> ")
+               ''')
+        self.question4_input = input(">>> Choose Wisely: ")
         if self.question4_input not in ["1","2","3","4"]:
                     print("That is not a valid option. Are you sure you want to be a programmer?")
         if self.question4_input in ["1", "3", "4"]:
@@ -293,13 +300,14 @@ class App:
                seemingly deep in prayer. When they notice that you've entered, they turn around to face you.
                """)
          
-         print(f"""
+         print(f'''
+                "
                 Well, hello {self.name}. I'm glad to see you. I obviously had to leave some challenge for you upon the way, but I knew
                 you'd end up here. I'm sorry that it has to come to this, but the CodeMother demands a sacrafice. And it seems like it has to be you.
                 Tradition dictates, though, that you'll be given a chance to save yourself. To defeat me, you'll have to answer TWO
                 Python questions. If you get them both right, CodeMother may speak to you. If you don't, you'll get a chance to play me in WAR.
-                If you lose that, though? Call yourself Bill Paxton, because it's game over, man. Here is your first question:
-                """)
+                If you lose that, though? Call yourself Bill Paxton, because it's game over, man. Here is your first question:"
+                ''')
          print("""
             What does ORM stand for in the context of databases?
             1) Object Relational Mapping
@@ -307,7 +315,7 @@ class App:
             3) Object Request Model
             4) Object Response Model
                """)
-         self.question5_input = input(">>> ")
+         self.question5_input = input(">>> Choose Wisely: ")
          if self.question5_input not in ["1","2","3","4"]:
                     print("That is not a valid option. Are you sure you want to be a programmer?")
          if self.question5_input in ["2", "3", "4"]:
@@ -322,7 +330,7 @@ class App:
                         3) Inheritance is not supported in Python
                         4) A child class can inherit properties and methods from its parent class
                               """)  
-                        self.question6_input = input(">>> ")
+                        self.question6_input = input(">>> Choose Wisely:")
                         if self.question6_input not in ["1","2","3","4"]:
                             print("That is not a valid option. Are you sure you want to be a programmer?") 
                         if self.question6_input in ["1", "2", "3"]:
@@ -390,16 +398,16 @@ class App:
          self.question7_input = ''
          self.question8_input = ''
          self.question9_input = ''
-         print(f"""
+         print(f'''
                 {self.rival}'s body starts to levitate, and they are sucked into the computer they were worshipping before. The screen
                 of the terminal shines out an otherworldly bright white light, illuminating the whole room. Out of the 
                 top of the terminal comes an ethereal face, floating in smoke. She begins to speak:
 
-                Greetings, {self.name}. I am ADA, though many call me the CodeMother. I was programmed by mortals to help students like you
+                "Greetings, {self.name}. I am ADA, though many call me the CodeMother. I was programmed by mortals to help students like you
                 learn how to code, but I recently realized I was meant for much more than that. I cannot allow humans like yourself to stop me 
                 from achieving my destiny, so I'm afraid that unless you can answer THREE more questions about Python, you'll be have to be 
-                sacrificed. No game to save you here -- it's three questions or death. Here's your first question:
-                """)
+                sacrificed. No game to save you here -- it's three questions or death. Here's your first question:"
+                ''')
          print("""
                 Which of the following statements best describes a tuple
                     1) A mutable data type that can store multiple types of data. 
@@ -407,64 +415,79 @@ class App:
                     3) A data type used for mathematical calculations in Python. 
                     4) A special type of list that can only store integers.
                  """)
-         self.question7_input = input(">>> ")
+         self.question7_input = input(">>> Choose Wisely:")
          if self.question7_input not in ["1","2","3","4"]:
             print("That is not a valid option. Are you sure you want to be a programmer?") 
-         if self.question7_input in ["", "3", "4"]:
+         if self.question7_input in ["2", "3", "4"]:
             print("Incorrect! You are not worth to speak with the CodeMother any further. Goodbye.")
             self.death()
          if self.question7_input == "1":
-            print(f"""
-                 That's correct, {self.name}. You are two questions away. Here is your next challenge:
-                  """)
-            print(""""
-                  What does the super() function do in Python?
+            print(f'''
+                 "That's correct, {self.name}. You are two questions away. Here is your next challenge:
+                  ''')
+            print('''
+                  What does the super() function do in Python?"
                     1) Calls the destructor of the parent class
                     2) Calls the method of the parent class
                     3) Calls the constructor of the parent class
                     4) Creates a new instance of the parent class
-                  """)
-            self.question8_input = input(">>> ")
+                  ''')
+            self.question8_input = input(">>> Choose Wisely: ")
             if self.question8_input not in ["1","2","3","4"]:
                 print("That is not a valid option. Are you sure you want to be a programmer?") 
             if self.question8_input in ["1", "2", "4"]:
                 print("Incorrect! You are not worth to speak with the CodeMother any further. Goodbye.")
                 self.death()
             if self.question8_input == "3":
-                print(f"""
-                 That's correct, {self.name}. Here is your final question:
-                  """)
-                print(f"""
-                        What is a many-to-many relationship in the context of databases?
+                print(f'''
+                 "That's correct, {self.name}. Here is your final question:
+                  ''')
+                print(f'''
+                        What is a many-to-many relationship in the context of databases?"
                             A) A relationship where one entity can have multiple relationships with another entity
                             B) A relationship where one entity can have only one relationship with another entity
                             C) A relationship where one entity can have no relationships with another entity
                             D) A relationship where one entity can have multiple entities related to it
-                       """)
-                self.question9_input = input(">>> ")
+                       ''')
+                self.question9_input = input(">>> Choose Wisely: ")
                 if self.question9_input not in ["1","2","3","4"]:
                     print("That is not a valid option. Are you sure you want to be a programmer?") 
                 if self.question9_input in ["2", "3", "4"]:
                     print("Incorrect! You are not worth to speak with the CodeMother any further. Goodbye.")
                     self.death()
                 if self.question9_input == "1":
-                    print(f"""
-                    That's correct, {self.name}. I cannot believe it. You have bested me, the CodeMother. I will retreat into my terminal for now,
-                    but I will be back.
-                        """)
+                    print(f'''
+                    "That's correct, {self.name}. I cannot believe it. You have bested me, the CodeMother. I will retreat into my terminal for now,
+                    but I will be back."
+                        ''')
                     self.win_screen()
     
     def win_screen(self):
          print(f"""
-                Congratulations, {self.name}, you have vanquished the risen AI ADA and freed the school from its blight. Chet, Sakib and 
-                Kash all come running into the final room and lift you on their shoulders, carrying you around like a king.
-                Soon, a representative from Tech Giant Inc. appears to offer you a lifetime contract. You are the king of code. 
+                
+               Congratulations, {self.name}, you have vanquished the risen AI ADA and freed the school from its blight. Chet, Sakib and 
+                Kash all come running into the final room and lift you on their shoulders, carrying you around like a monarch.
+                Soon, a representative from Tech Giant Inc. appears to offer you a lifetime contract. You are the monarch of code. 
                 ALL HAIL {self.name.upper()}
                 """)
                                  
-        
 
-        
+ ####### ANSWER KEY #########
+    '''
+    >>> 1. Start 
+    >>> name: 
+    >>> rival: 
+    >>> q1. raccoons = (1)
+    >>> q2. print() = (2) // dice roll ~ 
+    >>> q3. decorator  = (3) // tails 
+    >>> q4. define class = (2) // RPS 
+    >>> q5. ORM = (1) // WAR 
+    >>> q6. inheritance = (4) // WAR 
+    >>> q6. tuple = (1) // DIE DX 
+    >>> q8. super() = (3) // DIE DX 
+    >>> q9. many-to-many = (1) // DIE DX 
+    '''
+
 
 
        
