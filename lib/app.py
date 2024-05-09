@@ -55,7 +55,7 @@ class App:
         print("""
               Hoping to create a better life for yourself -- and perhaps find a home free of trolls -- you decide to embark on a 
               new career wielding magic -- in other words, you've signed up for Schola FlatFerrum, a coding bootcamp! You've scrounged together the 
-              neccesary doubloons (adding a fifth troll roommate to make up for the cost) and you're all ready to go --
+              necessary doubloons (adding a fifth troll roommate to make up for the cost) and you're all ready to go --
               all they need is your name.
               """)
         self.user_input = input(">>> Insert Name: ")
@@ -86,7 +86,7 @@ class App:
         self.question2_input = ""
 
         print("""
-              You walk into the room, which has a bloody sign reading "TURING" overhead. The room sits empty except for a single behoodied
+              You walk into the room, which has a bloody sign reading "TURING" overhead. The room sits empty except for a single hooded
               man sitting at a table. Behind his fashionable spectacles, there is nothing behind his glazed-over eyes. He speaks in a ghastly monotone voice:
               """)
         print(f'''
@@ -151,7 +151,7 @@ class App:
         self.question3_input = ''
         print("""
               \n
-              You go through the door into the next room. Another behoodied man sits in the middle of the room, furiously typing on a laptop.
+              You go through the door into the next room. Another hooded man sits in the middle of the room, furiously typing on a laptop.
               """)
         print(f'''
               "Welcome to the Collins Dungeon, {self.name}. I am Sakib, another instructor here at Schola FlatFerrum. As you can tell, things aren't
@@ -245,7 +245,7 @@ class App:
         choices = ['rock', 'paper', 'scissors']
         computer_selection = random.choice(choices)
         print(f"""
-               Ok, so we're going to play a game of rock, paper, scissors. Unlike with Chet's dice game,
+               Ok, so we're going to play a game of rock, paper, scissors. Unlike with Chett's dice game,
                I won't be giving you a win for a tie. Here we go... ROCK, PAPER, SCISSORS... 
                """)
         self.rps_input=input('Rock, paper or scissors?').lower()
@@ -269,7 +269,7 @@ class App:
         choices = ['rock', 'paper', 'scissors']
         computer_selection = random.choice(choices)
         print(f"""
-               Ok, so we're going to play a game of rock, paper, scissors. Unlike with Chet's dice game,
+               Ok, so we're going to play a game of rock, paper, scissors. Unlike with Chett's dice game,
                I won't be giving you a win for a tie. Here we go... ROCK, PAPER, SCISSORS... 
                """)
         self.replay_input=input('Rock, paper or scissors?').lower()
@@ -303,7 +303,7 @@ class App:
          print(f'''
                 "
                 Well, hello {self.name}. I'm glad to see you. I obviously had to leave some challenge for you upon the way, but I knew
-                you'd end up here. I'm sorry that it has to come to this, but the CodeMother demands a sacrafice. And it seems like it has to be you.
+                you'd end up here. I'm sorry that it has to come to this, but the CodeMother demands a sacrifice. And it seems like it has to be you.
                 Tradition dictates, though, that you'll be given a chance to save yourself. To defeat me, you'll have to answer TWO
                 Python questions. If you get them both right, CodeMother may speak to you. If you don't, you'll get a chance to play me in WAR.
                 If you lose that, though? Call yourself Bill Paxton, because it's game over, man. Here is your first question:"
@@ -444,10 +444,10 @@ class App:
                   ''')
                 print(f'''
                         What is a many-to-many relationship in the context of databases?"
-                            A) A relationship where one entity can have multiple relationships with another entity
-                            B) A relationship where one entity can have only one relationship with another entity
-                            C) A relationship where one entity can have no relationships with another entity
-                            D) A relationship where one entity can have multiple entities related to it
+                            1) A relationship where one entity can have multiple relationships with another entity
+                            2) A relationship where one entity can have only one relationship with another entity
+                            3) A relationship where one entity can have no relationships with another entity
+                            4) A relationship where one entity can have multiple entities related to it
                        ''')
                 self.question9_input = input(">>> Choose Wisely: ")
                 if self.question9_input not in ["1","2","3","4"]:
@@ -465,7 +465,7 @@ class App:
     def win_screen(self):
          print(f"""
                 
-               Congratulations, {self.name}, you have vanquished the risen AI ADA and freed the school from its blight. Chet, Sakib and 
+               Congratulations, {self.name}, you have vanquished the risen AI ADA and freed the school from its blight. Chett, Sakib and 
                 Kash all come running into the final room and lift you on their shoulders, carrying you around like a monarch.
                 Soon, a representative from Tech Giant Inc. appears to offer you a lifetime contract. You are the monarch of code. 
                 ALL HAIL {self.name.upper()}
